@@ -6,7 +6,7 @@ import com.yc.springframework.steretype.MyComponentScan;
 import com.yc.springframework.steretype.MyConfiguration;
 
 @MyConfiguration//表示当前类是一个配置类
-@MyComponentScan(basePackages = {"com.yc.dao","com.yc.biz"})//表示该类要扫描的范围
+@MyComponentScan(basePackages = {"com.yc.biz","com.yc.dao"})//表示该类要扫描的范围
 public class MyAppConfig {
 
     @MyBean

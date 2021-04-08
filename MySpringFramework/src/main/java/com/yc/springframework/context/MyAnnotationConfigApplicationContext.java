@@ -36,6 +36,7 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
             }
             //getAppConfigBasePackages得到配置类的当前路径
             String[] basePackages=getAppConfigBasePackages(cl);
+            System.out.println(basePackages);
             if(cl.isAnnotationPresent(MyComponentScan.class)){
                 MyComponentScan mcs=(MyComponentScan) cl.getAnnotation(MyComponentScan.class);
                 if(mcs.basePackages()!=null&&mcs.basePackages().length>0){
@@ -125,8 +126,6 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
     private void handleManageBean() throws InstantiationException, IllegalAccessException, InvocationTargetException {
         for(Class c:managedBeanClasses){
             if(c.isAnnotationPresent(MyComponent.class)){
-                saveManageBean(c);
-            }else if(c.isAnnotationPresent(MyComponent.class)){
                 saveManageBean(c);
             }else if(c.isAnnotationPresent(MyService.class)){
                 saveManageBean(c);

@@ -1,11 +1,14 @@
 package com.yc.biz;
 
 import com.yc.dao.StudentDao;
+import com.yc.springframework.steretype.MyAutowired;
+import com.yc.springframework.steretype.MyQualifier;
+import com.yc.springframework.steretype.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service
+@MyService
 public class StudentBiz {
     private StudentDao studentDao;
 
@@ -13,8 +16,7 @@ public class StudentBiz {
 
     }
 
-    @Autowired
-    @Qualifier(value = "studentDaoJpalmpl")
+    @MyAutowired
     public void setStudentDao(StudentDao studentDao) {
         this.studentDao = studentDao;
     }
